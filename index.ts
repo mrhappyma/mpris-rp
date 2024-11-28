@@ -38,7 +38,10 @@ const getAlbumCover = async (album: Album) => {
   const response = await fetch(url);
   const data = await response.json();
   if (!data?.data?.length) return;
-  const cover = data.data[0].album.cover_big;
+  const albums = data.data as any[];
+  const a = albums.find((a) => a.artist.name === album.artist);
+  if (!a) return;
+  const cover = a.album.cover_big;
   albumCoverCache.set(cacheKey, cover);
   return cover;
 };
