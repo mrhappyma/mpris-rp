@@ -1,0 +1,18 @@
+{
+  "name": "mpris-rp",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/discord-rpc": "^4.0.8",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dbus-next": "^0.10.2",
+    "discord-rpc": "github:mrhappyma/discord-rpc"
+  }
+}
