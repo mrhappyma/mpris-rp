@@ -61,7 +61,7 @@ const setActivity = async () => {
       title: music[0].album,
       artist: music[0].artist,
     }),
-    largeImageText: music[0].album,
+    largeImageText: music[0].album || "No Album",
     smallImageKey: music[0].status.toLowerCase(),
     smallImageText: music[0].status,
     type: 2,
