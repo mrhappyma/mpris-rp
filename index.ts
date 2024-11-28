@@ -37,7 +37,8 @@ const getAlbumCover = async (album: Album) => {
   const url = `https://api.deezer.com/search?q=album:"${album.title}" artist:"${album.artist}"`;
   const response = await fetch(url);
   const data = await response.json();
-  const cover = data?.data?.[0].album.cover_big;
+  if (!data?.data?.length) return;
+  const cover = data.data[0].album.cover_big;
   albumCoverCache.set(cacheKey, cover);
   return cover;
 };
