@@ -62,7 +62,7 @@ const setActivity = async () => {
     details: music[0].title,
     largeImageKey: await getAlbumCover({
       title: music[0].album,
-      artist: music[0].artist,
+      artist: music[0].artist.split(",")[0],
     }),
     largeImageText: music[0].album || "No Album",
     smallImageKey: music[0].status.toLowerCase(),
